@@ -1,0 +1,5 @@
+#预发布环境
+server:
+  port: 8084
+springstudy:
+  demoname: multienv-uat

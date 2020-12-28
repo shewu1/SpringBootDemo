@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wushe.springbootmybatisplus.mapper.ApiExampleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wushe.springbootmybatisplus.model.ApiExampleBean">
+        <id column="id" property="id" />
+        <result column="api_info_id" property="apiInfoId" />
+        <result column="method" property="method" />
+        <result column="url" property="url" />
+        <result column="request_header" property="requestHeader" />
+        <result column="request_body" property="requestBody" />
+        <result column="response_header" property="responseHeader" />
+        <result column="response_body" property="responseBody" />
+        <result column="status" property="status" />
+        <result column="elapsed_time" property="elapsedTime" />
+        <result column="options" property="options" />
+        <result column="editor" property="editor" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, api_info_id, method, url, request_header, request_body, response_header, response_body, status, elapsed_time, options, editor, create_time
+    </sql>
+
+</mapper>

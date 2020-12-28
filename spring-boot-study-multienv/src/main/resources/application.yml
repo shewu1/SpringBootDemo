@@ -1,0 +1,8 @@
+server:
+  port: 8081
+springstudy:
+  demoname: default
+#¶à»·¾³ÇÐ»»
+spring:
+  profiles:
+    active: uat

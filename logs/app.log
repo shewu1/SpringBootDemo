@@ -1,0 +1,23 @@
+"2020-12-08 09:45:56,521 INFO  [main] com.wushe.SpringBootStudyLogApplication : Starting SpringBootStudyLogApplication using Java 1.8.0_271 on DESKTOP-2T8I5D4 with PID 19628 (E:\工作相关\编程项目\狂神说java-springboot\代码\SpringBootDemo\spring-boot-study-log\target\classes started by wxb in E:\工作相关\编程项目\狂神说java-springboot\代码\SpringBootDemo)
+""2020-12-08 09:45:56,523 DEBUG [main] com.wushe.SpringBootStudyLogApplication : Running with Spring Boot v2.4.0, Spring v5.3.1
+""2020-12-08 09:45:56,524 INFO  [main] com.wushe.SpringBootStudyLogApplication : No active profile set, falling back to default profiles: default
+""2020-12-08 09:45:57,617 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+""2020-12-08 09:45:57,630 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+""2020-12-08 09:45:57,630 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.39]
+""2020-12-08 09:45:57,632 INFO  [main] org.apache.catalina.core.AprLifecycleListener : Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+""2020-12-08 09:45:57,632 INFO  [main] org.apache.catalina.core.AprLifecycleListener : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+""2020-12-08 09:45:57,633 INFO  [main] org.apache.catalina.core.AprLifecycleListener : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+""2020-12-08 09:45:57,639 INFO  [main] org.apache.catalina.core.AprLifecycleListener : OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+""2020-12-08 09:45:57,718 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+""2020-12-08 09:45:57,718 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1148 ms
+""2020-12-08 09:45:57,851 INFO  [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor'
+""2020-12-08 09:45:57,995 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path ''
+""2020-12-08 09:45:58,005 INFO  [main] com.wushe.SpringBootStudyLogApplication : Started SpringBootStudyLogApplication in 2.045 seconds (JVM running for 5.205)
+""2020-12-08 09:46:11,750 INFO  [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2020-12-08 09:46:11,760 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+""2020-12-08 09:46:11,761 INFO  [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+""2020-12-08 09:46:11,776 DEBUG [http-nio-8080-exec-1] com.wushe.controller.IndexController : This is a debug message
+""2020-12-08 09:46:11,776 INFO  [http-nio-8080-exec-1] com.wushe.controller.IndexController : This is an info message
+""2020-12-08 09:46:11,776 WARN  [http-nio-8080-exec-1] com.wushe.controller.IndexController : This is a warn message
+""2020-12-08 09:46:11,776 ERROR [http-nio-8080-exec-1] com.wushe.controller.IndexController : This is an error message
+"

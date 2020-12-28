@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wushe.springbootmybatisplus.LDataLDataDao">
+  <resultMap id="BaseResultMap" type="com.wushe.springbootmybatisplus.LData">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="sand_table_id" jdbcType="VARCHAR" property="sandTableId" />
+    <result column="voice_json" jdbcType="VARCHAR" property="voiceJson" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="master_id" jdbcType="VARCHAR" property="masterId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="rec_init_json" jdbcType="VARCHAR" property="recInitJson" />
+    <result column="rec_json" jdbcType="VARCHAR" property="recJson" />
+    <result column="set_up" jdbcType="VARCHAR" property="setUp" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, sand_table_id, voice_json, create_time, update_time, create_by, update_by, `status`, 
+    master_id, `name`, `type`, rec_init_json, rec_json, set_up
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from l_data
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from l_data
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.wushe.springbootmybatisplus.LData" useGeneratedKeys="true">
+    insert into l_data (sand_table_id, voice_json, create_time, 
+      update_time, create_by, update_by, 
+      `status`, master_id, `name`, 
+      `type`, rec_init_json, rec_json, 
+      set_up)
+    values (#{sandTableId,jdbcType=VARCHAR}, #{voiceJson,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=VARCHAR}, #{updateBy,jdbcType=VARCHAR}, 
+      #{status,jdbcType=TINYINT}, #{masterId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{recInitJson,jdbcType=VARCHAR}, #{recJson,jdbcType=VARCHAR}, 
+      #{setUp,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.wushe.springbootmybatisplus.LData" useGeneratedKeys="true">
+    insert into l_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sandTableId != null">
+        sand_table_id,
+      </if>
+      <if test="voiceJson != null">
+        voice_json,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="masterId != null">
+        master_id,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="recInitJson != null">
+        rec_init_json,
+      </if>
+      <if test="recJson != null">
+        rec_json,
+      </if>
+      <if test="setUp != null">
+        set_up,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sandTableId != null">
+        #{sandTableId,jdbcType=VARCHAR},
+      </if>
+      <if test="voiceJson != null">
+        #{voiceJson,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="masterId != null">
+        #{masterId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="recInitJson != null">
+        #{recInitJson,jdbcType=VARCHAR},
+      </if>
+      <if test="recJson != null">
+        #{recJson,jdbcType=VARCHAR},
+      </if>
+      <if test="setUp != null">
+        #{setUp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wushe.springbootmybatisplus.LData">
+    update l_data
+    <set>
+      <if test="sandTableId != null">
+        sand_table_id = #{sandTableId,jdbcType=VARCHAR},
+      </if>
+      <if test="voiceJson != null">
+        voice_json = #{voiceJson,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="masterId != null">
+        master_id = #{masterId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="recInitJson != null">
+        rec_init_json = #{recInitJson,jdbcType=VARCHAR},
+      </if>
+      <if test="recJson != null">
+        rec_json = #{recJson,jdbcType=VARCHAR},
+      </if>
+      <if test="setUp != null">
+        set_up = #{setUp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wushe.springbootmybatisplus.LData">
+    update l_data
+    set sand_table_id = #{sandTableId,jdbcType=VARCHAR},
+      voice_json = #{voiceJson,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=TINYINT},
+      master_id = #{masterId,jdbcType=VARCHAR},
+      `name` = #{name,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
+      rec_init_json = #{recInitJson,jdbcType=VARCHAR},
+      rec_json = #{recJson,jdbcType=VARCHAR},
+      set_up = #{setUp,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

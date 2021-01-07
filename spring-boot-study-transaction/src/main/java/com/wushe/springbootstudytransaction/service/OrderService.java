@@ -4,6 +4,7 @@ import com.wushe.springbootstudytransaction.mapper.GoodsDao;
 import com.wushe.springbootstudytransaction.mapper.OrderDao;
 import com.wushe.springbootstudytransaction.model.GoodsDo;
 import com.wushe.springbootstudytransaction.model.OrderDo;
+import jdk.nashorn.internal.ir.CatchNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,9 +43,9 @@ public class OrderService {
     public int startCreateOrder(Long goodsId, Long count) throws Exception {
         System.out.println("orderService="+orderService);
         //事务失效，不回滚
-        //return this.createOrder3(goodsId, count);
+        return this.createOrder3(goodsId, count);
         //事务有效，可回滚,其实是使用了代理对象
-        return orderService.createOrder3(goodsId, count);
+        //return orderService.createOrder3(goodsId, count);
     }
 
     /**
@@ -73,6 +74,66 @@ public class OrderService {
         order.setCount(count);
         int affectRows = orderDao.insert(order);
         return affectRows;
+    }
+    /**
+     * @Description:    非受检查异常造成事务回滚
+     * @Author:         jiangtb
+     * @UpdateUser:     jiangtb 
+     * @Param: [goodsId, count]
+     * @Return: int
+     * @CreateDate:     2021/1/6 16:44
+     * @UpdateDate:     2021/1/6 16:44
+     * @tags:        1.0
+     * @status:         done
+    */
+    @Transactional
+    public int createOrderCatchFinally(Long goodsId, Long count) throws Exception {
+
+        try {
+            // 锁定商品库存
+            GoodsDo goods = goodsDao.selectForUpdate(goodsId);
+            // 扣减库存
+            Long newNum = goods.getNum() - count;
+            goods.setNum(newNum);
+            goodsDao.update(goods);
+            // 模拟异常
+            int a=1/0;
+            // 生成订单
+            OrderDo order = new OrderDo();
+            order.setGoodsId(goodsId);
+            order.setCount(count);
+            int affectRows = orderDao.insert(order);
+            return affectRows;
+        }catch (Exception e){
+
+            System.out.println(e.getMessage());
+            throw new Exception("djdjdjdjdjjdjjdj");
+           // return 0;
+        }finally {
+            System.out.println("结束~~");
+        }
+    }
+    @Transactional
+    public int createOrderTryFinally(Long goodsId, Long count) {
+        try {
+            // 锁定商品库存
+            GoodsDo goods = goodsDao.selectForUpdate(goodsId);
+            // 扣减库存
+            Long newNum = goods.getNum() - count;
+            goods.setNum(newNum);
+            goodsDao.update(goods);
+            // 模拟异常
+            int a=1/0;
+            // 生成订单
+            OrderDo order = new OrderDo();
+            order.setGoodsId(goodsId);
+            order.setCount(count);
+            int affectRows = orderDao.insert(order);
+            return affectRows;
+        }finally {
+            System.out.println("结束~~");
+        }
+
     }
     /**
      * @Description:    受检查异常不会回滚
@@ -129,6 +190,7 @@ public class OrderService {
             //注意！此处为受检查的异常，就算抛出也不会回滚
             throw new Exception();
         }
+        System.out.println("进来");
         // 生成订单
         OrderDo order = new OrderDo();
         order.setGoodsId(goodsId);

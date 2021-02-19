@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @Description:    spring boot多环境配置
- * 1、在 cmd 命令中指定：java -jar xxx.jar --spring.profiles.actvie=dev
+ * 1、在 cmd 命令中指定：java -jar xxx.jar --spring.profiles.active=dev
  * 2、在 application.yml 中指定
  * spring:
  *   profiles:

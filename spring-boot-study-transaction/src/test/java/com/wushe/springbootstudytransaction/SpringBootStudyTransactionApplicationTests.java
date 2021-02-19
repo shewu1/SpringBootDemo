@@ -27,7 +27,7 @@ class SpringBootStudyTransactionApplicationTests {
         //受检异常不回滚
         //int affectRows2 = orderService.createOrder2(1l,1l);
         //try catch 事务失效
-        orderService.createOrderCatchFinally(1l,1l);
+        //orderService.createOrderCatchFinally(1l,1l);
         // try finally 事务有效回滚
         //orderService.createOrderTryFinally(1l,1l);
 

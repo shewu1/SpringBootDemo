@@ -1,7 +1,6 @@
 package com.wushe.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,14 +20,16 @@ import org.springframework.web.bind.annotation.RestController;
  * ，他执行了 logback-spring.xml 中的配置，所以 logback-spring.xml 配置是优先的
 * */
 @RestController
+@Slf4j
 public class IndexController {
-    private final Logger log = LoggerFactory.getLogger(IndexController.class);
+    // private final Logger log = LoggerFactory.getLogger(IndexController.class);
     @RequestMapping("/")
     public String index(){
+
         log.debug("This is a debug message");
-        log.info("This is an info message");
+        log.info("This is an {} message","info");
         log.warn("This is a warn message");
-        log.error("This is an error message");
+        log.error("This is an {} message {}","er","blue");
         return "index";
     }
 }

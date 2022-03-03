@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @Description:
+ * @Description: 自定义全局异常处理
  * @Copyright: Copyright (c) 2020  ALL RIGHTS RESERVED.
  * @Company: 成都旺小宝科技有限公司
  * @Author: jtb
@@ -33,7 +33,7 @@ public class MyExceptionController {
         ModelAndView modelAndView = new ModelAndView();
 
         //将异常信息设置如modelAndView
-        modelAndView.addObject("msg", ex);
+        modelAndView.addObject("msg", ex.getMessage());
         modelAndView.addObject("url", request.getRequestURL());
         modelAndView.setViewName(DEFAULT_ERROR_VIEW);
 

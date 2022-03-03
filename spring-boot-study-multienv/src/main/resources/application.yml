@@ -1,8 +1,8 @@
 server:
-  port: 8081
+  port: 8061
 springstudy:
   demoname: default
-#¶à»·¾³ÇĞ»»
+# å¤šç¯å¢ƒåˆ‡æ¢
 spring:
   profiles:
     active: uat

@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.StopWatch;
 
-import java.util.concurrent.TimeUnit;
-
 @SpringBootTest
 class SpringBootStudyTransactionApplicationTests {
     @Autowired
@@ -50,5 +48,9 @@ class SpringBootStudyTransactionApplicationTests {
 
         System.out.println(sw.prettyPrint());
         System.out.println(sw.getTotalTimeMillis());
+    }
+    @Test
+    void ccc(){
+        System.out.println("hahah");
     }
 }

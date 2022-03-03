@@ -1,5 +1,5 @@
 #开发环境
-#server:
-#  port: 8082
+server:
+  port: 8062
 springstudy:
   demoname: multienv-test

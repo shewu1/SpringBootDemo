@@ -27,9 +27,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/login")//登录会进入自定义登录逻辑
                 .loginPage("/login.html")//登录页面
                 .successForwardUrl("/tomain") // 表单方式
+                .failureForwardUrl("/toerror")
                 .and()
                 .authorizeRequests() // 授权配置
                 .antMatchers("/login.html").permitAll()//不需要被认证的配置
+                .antMatchers("/error.html").permitAll()
                 .anyRequest()  // 所有请求
                 .authenticated()// 都需要认证
                 .and().csrf()

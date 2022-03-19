@@ -23,4 +23,9 @@ public class LoginController {
         System.out.println("登录成功方法");
         return "redirect:main.html";
     }
+    @RequestMapping("toerror")
+    public String toerror(){
+        System.out.println("登录成功方法");
+        return "redirect:error.html";
+    }
 }
